@@ -9,6 +9,7 @@ export const useFetchMedia = defineStore("fetch_media", {
     popularSeries: [],
     upcomingSeries: [],
     topRatedSeries: [],
+    nowPlayingMovies: [],
     currentPage: 1,
     movieDetails: null,
     searchResults: [], // Add state for search results
@@ -23,7 +24,8 @@ export const useFetchMedia = defineStore("fetch_media", {
     getUpcomingSeries: (state) => state.upcomingSeries,
     getTopRatedSeries: (state) => state.topRatedSeries,
     getMovieDetails: (state) => state.movieDetails,
-    getSearchResults: (state) => state.searchResults, // Add getter for search results
+    getSearchResults: (state) => state.searchResults,
+    getNowPlayingMovies: (state) => state.nowPlayingMovies,
   },
   actions: {
     async fetchPopularMovies() {
@@ -129,6 +131,19 @@ export const useFetchMedia = defineStore("fetch_media", {
           params: { query: this.searchQuery, page: this.searchPage },
         });
         this.searchResults = [...this.searchResults, ...response.data.results];
+      } catch (error) {
+        return error;
+      }
+    },
+    async fetchNowPlayingMovies() {
+      try {
+        const response = await http.get("movie/now_playing", {
+          params: { page: this.currentPage },
+        });
+        this.nowPlayingMovies = [
+          ...this.nowPlayingMovies,
+          ...response.data.results,
+        ];
       } catch (error) {
         return error;
       }
