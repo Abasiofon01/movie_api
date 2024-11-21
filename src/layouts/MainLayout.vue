@@ -18,7 +18,7 @@
       @click="scrollToTop"
       aria-label="Scroll to Top"
     >
-      ↑
+      <i class="las la-angle-up"></i>
     </button>
   </div>
 </template>

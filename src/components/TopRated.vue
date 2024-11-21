@@ -57,8 +57,6 @@ export default {
       isLoading.value = false;
     };
 
-    console.log(movies);
-
     return { movies, loadMoreMovies, PosterImage, isLoading };
   },
 };

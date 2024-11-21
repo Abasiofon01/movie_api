@@ -1,21 +1,33 @@
 <template>
-  <img :src="url + path" />
+  <img :src="imageUrl" :alt="alt" :class="className" />
 </template>
+
 <script>
 export default {
-  name: "PosterImage",
+  name: "ImageRenderer",
   props: {
-    src: {
-      type: String,
-    },
     path: {
       type: String,
+      required: true,
     },
-    url: {
+    quality: {
       type: String,
-      default: "https://image.tmdb.org/t/p/original",
+      default: "original", // Default quality
+    },
+    alt: {
+      type: String,
+      default: "",
+    },
+    className: {
+      type: String,
+      default: "",
+    },
+  },
+  computed: {
+    imageUrl() {
+      const baseUrl = "https://image.tmdb.org/t/p/";
+      return `${baseUrl}${this.quality}${this.path}`;
     },
   },
 };
 </script>
-<style lang=""></style>

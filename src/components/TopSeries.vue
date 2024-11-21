@@ -55,6 +55,7 @@ export default {
       movies.value = store.getPopularSeries;
       isLoading.value = false;
     };
+
     return { movies, loadMoreMovies, PosterImage, isLoading };
   },
 };

@@ -10,6 +10,7 @@ export const useFetchMedia = defineStore("fetch_media", {
     upcomingSeries: [],
     topRatedSeries: [],
     currentPage: 1,
+    movieDetails: null, // Add state for movie details
   }),
   getters: {
     getPopularMovies: (state) => state.popularMovies,
@@ -18,6 +19,7 @@ export const useFetchMedia = defineStore("fetch_media", {
     getPopularSeries: (state) => state.popularSeries,
     getUpcomingSeries: (state) => state.upcomingSeries,
     getTopRatedSeries: (state) => state.topRatedSeries,
+    getMovieDetails: (state) => state.movieDetails, // Add getter for movie details
   },
   actions: {
     async fetchPopularMovies() {
@@ -85,12 +87,21 @@ export const useFetchMedia = defineStore("fetch_media", {
         const response = await http.get("tv/top_rated", {
           params: { page: this.currentPage },
         });
-        console.log(response);
 
         this.topRatedSeries = [
           ...this.topRatedSeries,
           ...response.data.results,
         ];
+      } catch (error) {
+        return error;
+      }
+    },
+    async fetchMovieDetails(movieId) {
+      try {
+        this.movieDetails = null;
+        const response = await http.get(`movie/${movieId}`);
+
+        this.movieDetails = response.data;
       } catch (error) {
         return error;
       }

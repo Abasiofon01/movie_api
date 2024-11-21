@@ -14,6 +14,7 @@
 // ];
 
 import Home from "../pages/IndexPage.vue";
+import MovieDetails from "../pages/MovieDetails.vue";
 
 const routes = [
   {
@@ -22,6 +23,8 @@ const routes = [
     component: Home,
     // children: [{ path: "", component: () => import("../pages/IndexPage.vue") }],
   },
+
+  { path: "/movie/:id", name: "MovieDetails", component: MovieDetails },
 
   {
     path: "/:catchAll(.*)*",

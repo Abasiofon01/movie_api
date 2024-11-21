@@ -6,7 +6,11 @@
 
     <div class="details-section">
       <div class="movie-title-wrapper">
-        <span class="card-title">{{ movie.title }}</span>
+        <router-link
+          :to="{ name: 'MovieDetails', params: { id: movie.id } }"
+          class="card-title"
+          >{{ movie.title ?? movie.name }}</router-link
+        >
         <time datetime="2022">
           {{ movie?.release_date?.replace(/^(.{7}).*/, "$1") }}
         </time>
