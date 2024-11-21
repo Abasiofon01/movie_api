@@ -422,16 +422,6 @@ body {
 }
 
 .movies-and-btn {
-  .movies-list {
-    display: grid;
-    grid-template-columns: 1, 1fr;
-    gap: 1.5rem;
-
-    @media (min-width: 425px) {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-  }
-
   .load-more-btn-wrapper {
     text-align: center;
     margin-top: 20px;
@@ -450,6 +440,16 @@ body {
     .load-more-btn:hover {
       background-color: #22c55ed3;
     }
+  }
+}
+
+.movies-list {
+  display: grid;
+  grid-template-columns: 1, 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 425px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
 
@@ -477,15 +477,15 @@ body {
   &::before {
     transform: scale3d(0, 1, 1);
     transform-origin: left top;
-    border-top: 1px solid #acacac;
-    border-bottom: 1px solid #acacac;
+    border-top: 2px solid var(--green);
+    border-bottom: 2px solid var(--green);
   }
 
   &::after {
     transform: scale3d(1, 0, 1);
     transform-origin: right top;
-    border-right: 1px solid #acacac;
-    border-left: 1px solid #acacac;
+    border-right: 2px solid var(--green);
+    border-left: 2px solid var(--green);
   }
 
   &:hover,
@@ -519,6 +519,7 @@ body {
     gap: 18px;
 
     time {
+      flex-shrink: 0;
       color: var(--green);
       font-size: var(--fs-9);
       font-weight: var(--fw-500);
@@ -723,6 +724,10 @@ body {
   background-size: cover;
   background-position: center;
   padding-block: var(--section-padding);
+}
+
+.search-results {
+  margin-top: var(--header-height);
 }
 
 footer {

@@ -15,6 +15,7 @@
 
 import Home from "../pages/IndexPage.vue";
 import MovieDetails from "../pages/MovieDetails.vue";
+import SearchPage from "../pages/SearchPage.vue";
 
 const routes = [
   {
@@ -25,6 +26,7 @@ const routes = [
   },
 
   { path: "/movie/:id", name: "MovieDetails", component: MovieDetails },
+  { path: "/search", name: "SearchResults", component: SearchPage },
 
   {
     path: "/:catchAll(.*)*",

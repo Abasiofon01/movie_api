@@ -3,13 +3,13 @@
     <div class="footer-top">
       <div class="container">
         <div class="footer-brand-wrapper">
-          <a href="./index.html" class="logo">
+          <a href="/" class="logo">
             <!-- <img src="./assets/images/logo.svg" alt="Filmlane logo" /> -->
           </a>
 
           <div class="footer-links-wrapper">
             <span>
-              <a href="./index.html" class="footer-link">Home</a>
+              <a href="/" class="footer-link">Home</a>
             </span>
 
             <span>
