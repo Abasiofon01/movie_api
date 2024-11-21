@@ -448,12 +448,12 @@ body {
 }
 
 .movies-list {
+  @apply grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5;
   display: grid;
-  grid-template-columns: 1, 1fr;
   gap: 1.5rem;
 
-  @media (min-width: 425px) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  @media (min-width: 425px) and (max-width: 639.99px) {
+    @apply grid-cols-2;
   }
 }
 
