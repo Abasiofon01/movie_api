@@ -55,8 +55,12 @@
   /**
    * spacing
    */
-  --header-height: 80px;
+  --header-height: 64px;
   --section-padding: 3rem;
+
+  @media (min-width: 768px) {
+    --header-height: 80px;
+  }
 }
 
 html {
