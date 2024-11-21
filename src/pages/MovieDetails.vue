@@ -31,7 +31,7 @@
 
   <div v-else><p>Loading...</p></div>
 
-  <section class="category" id="category">
+  <!-- <section class="category" id="category">
     <h2 class="section-heading">Category</h2>
 
     <div class="category-grid">
@@ -83,7 +83,7 @@
         <div class="total">80</div>
       </div>
     </div>
-  </section>
+  </section> -->
 </template>
 <script>
 import { onMounted, computed, watch } from "vue";
@@ -110,7 +110,7 @@ export default {
   },
 };
 </script>
-<style scoped>
+<!-- <style scoped>
 .category {
   margin-bottom: 60px;
 }
@@ -164,4 +164,4 @@ export default {
 .category-card:hover .name {
   color: var(--light-azure);
 }
-</style>
+</style> -->
