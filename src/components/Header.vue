@@ -7,7 +7,7 @@
         data-overlay
       ></div>
 
-      <a href="/" class="logo"> Movies </a>
+      <a href="/" class="logo"> FilmFolio </a>
 
       <!-- Desktop Navbar -->
       <nav class="navbar desktop-navbar">
@@ -56,7 +56,7 @@
       data-navbar
     >
       <div class="navbar-top">
-        <a href="./" class="logo"> Movies </a>
+        <a href="./" class="logo"> FilmFolio </a>
 
         <button
           class="menu-close-btn"

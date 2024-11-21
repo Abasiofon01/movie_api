@@ -3,9 +3,7 @@
     <div class="footer-top">
       <div class="container">
         <div class="footer-brand-wrapper">
-          <a href="/" class="logo">
-            <!-- <img src="./assets/images/logo.svg" alt="Filmlane logo" /> -->
-          </a>
+          <a href="/" class="logo"> FilmFolio </a>
 
           <div class="footer-links-wrapper">
             <span>
