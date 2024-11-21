@@ -14,6 +14,8 @@ header {
 
   .logo {
     color: var(--green);
+    border: none;
+    outline: none;
   }
 
   &.active {
@@ -120,6 +122,47 @@ header {
     display: none;
   }
 
+  @keyframes shooting-border {
+    0% {
+      border-bottom-color: transparent;
+      width: 0;
+    }
+    50% {
+      border-bottom-color: var(--green);
+      width: 100%;
+    }
+    100% {
+      border-bottom-color: var(--green);
+      width: 100%;
+    }
+  }
+
+  .navbar-link {
+    color: var(--white);
+    font-size: var(--fs-8);
+    font-weight: var(--fw-500);
+    padding-bottom: 0.5rem;
+    transition: color var(--transition-1);
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+
+  .navbar-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--green);
+    transition: width var(--transition-1);
+  }
+
+  .navbar-link:is(:hover, :focus)::after {
+    animation: shooting-border 0.5s forwards;
+  }
+
   @media (min-width: 1024px) {
     .mobile-navbar {
       display: none;
@@ -138,11 +181,7 @@ header {
       .desktop-nav-items {
         display: flex;
         align-items: center;
-        gap: 1rem;
-      }
-
-      .navbar-link {
-        color: white;
+        gap: 2.5rem;
       }
     }
   }
@@ -217,18 +256,8 @@ header {
     }
 
     .navbar-link {
-      color: var(--white);
-      font-size: var(--fs-8);
-      font-weight: var(--fw-500);
       padding: 1rem 25px;
       border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
-      transition: var(--transition-1);
-      display: block;
-      width: 100%;
-    }
-
-    .navbar-link:is(:hover, :focus) {
-      color: var(--green);
     }
   }
 }

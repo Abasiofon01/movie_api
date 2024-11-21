@@ -20,7 +20,7 @@
             {{ isLoading ? "Loading..." : "Load More" }}
           </button>
         </div>
-        <div v-else>
+        <div v-else class="empty-state-discription">
           <p>No results found.</p>
         </div>
       </div>
