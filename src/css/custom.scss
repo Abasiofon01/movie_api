@@ -207,6 +207,7 @@ body {
 .hero {
   position: relative;
   background-color: black;
+  margin-top: var(--header-height);
 
   .video-wrapper {
     position: relative;
