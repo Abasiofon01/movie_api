@@ -24,15 +24,6 @@
           </button>
         </div>
       </div>
-
-      <!-- Booking Modal -->
-      <BookingModal
-        v-if="selectedMovie"
-        :movie="selectedMovie"
-        :showtimes="showtimes"
-        @close="selectedMovie = null"
-        @confirm="ticketDetails = $event"
-      />
     </div>
   </section>
 </template>
@@ -41,22 +32,17 @@
 import { onMounted, ref } from "vue";
 import MovieCard from "./MovieCard.vue";
 import SectionTitle from "./SectionTitle.vue";
-import BookingModal from "./BookingModal.vue";
 import { useFetchMedia } from "../stores/MoviesStore";
 
 export default {
   components: {
     MovieCard,
     SectionTitle,
-    BookingModal,
   },
   setup() {
     const store = useFetchMedia();
     const nowPlayingMovies = ref([]);
     const isLoading = ref(false);
-    const selectedMovie = ref(null);
-    const ticketDetails = ref(null);
-    const showtimes = ref(["12:00 PM", "3:00 PM", "6:00 PM", "9:00 PM"]);
 
     // Fetch movies on mount
     onMounted(async () => {
@@ -73,18 +59,10 @@ export default {
       isLoading.value = false;
     };
 
-    const openBookingModal = (movie) => {
-      selectedMovie.value = movie;
-    };
-
     return {
       nowPlayingMovies,
       loadMoreMovies,
       isLoading,
-      selectedMovie,
-      openBookingModal,
-      ticketDetails,
-      showtimes,
     };
   },
 };
