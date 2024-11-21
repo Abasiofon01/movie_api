@@ -1,21 +1,18 @@
 <template>
   <div
-    class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center"
+    class="bg-blue text-white text-center p-6 flex flex-center justify-center error-page"
   >
-    <div>
-      <div style="font-size: 30vh">404</div>
+    <div class="flex flex-col">
+      <h1 class="text-9xl">404</h1>
 
-      <div class="text-h2" style="opacity: 0.4">Oops. Nothing here...</div>
+      <div class="" style="opacity: 0.4">Oops. Nothing here...</div>
 
-      <q-btn
-        class="q-mt-xl"
-        color="white"
-        text-color="blue"
-        unelevated
+      <router-link
+        class="block mt-6 rounded-md self-center text-white bg-green-400 px-2 py-1"
         to="/"
-        label="Go Home"
-        no-caps
-      />
+      >
+        Go Home
+      </router-link>
     </div>
   </div>
 </template>
@@ -27,3 +24,10 @@ export default defineComponent({
   name: "ErrorNotFound",
 });
 </script>
+
+<style scoped lang="css">
+.error-page {
+  margin-top: var(--header-height);
+  height: 50dvh;
+}
+</style>
